@@ -9,19 +9,22 @@ const translatedCatalog = {
   "pt-br": {
     complexidade: ["Complexidade computacional", "Entenda como o custo de um algoritmo cresce conforme a entrada aumenta."],
     arrays: ["Arrays e vetores", "Explore índices, acesso direto, inserção e limites da estrutura."],
-    "pilhas-e-filas": ["Pilhas e filas", "Compare LIFO e FIFO com operações e exemplos cotidianos."],
+    "pilhas-e-filas": ["Pilhas e filas", "Execute push, pop, enqueue e dequeue e compare LIFO com FIFO."],
+    "arvores-binarias": ["Árvores binárias de busca", "Insira, busque e remova nós; explore a hierarquia e o percurso em ordem."],
     "busca-linear-e-binaria": ["Busca linear e binária", "Compare estratégias de busca e entenda o pré-requisito da busca binária."],
   },
   en: {
     complexidade: ["Computational complexity", "Understand how an algorithm's cost grows as input size increases."],
     arrays: ["Arrays", "Explore indexes, direct access, insertion, and structural limits."],
-    "pilhas-e-filas": ["Stacks and queues", "Compare LIFO and FIFO through operations and everyday examples."],
+    "pilhas-e-filas": ["Stacks and queues", "Run push, pop, enqueue, and dequeue; compare LIFO and FIFO."],
+    "arvores-binarias": ["Binary search trees", "Insert, search, and remove nodes; explore hierarchy and in-order traversal."],
     "busca-linear-e-binaria": ["Linear and binary search", "Compare search strategies and understand binary search prerequisites."],
   },
   es: {
     complexidade: ["Complejidad computacional", "Comprende cómo crece el costo de un algoritmo cuando aumenta la entrada."],
     arrays: ["Arrays y vectores", "Explora índices, acceso directo, inserción y límites de la estructura."],
-    "pilhas-e-filas": ["Pilas y colas", "Compara LIFO y FIFO mediante operaciones y ejemplos cotidianos."],
+    "pilhas-e-filas": ["Pilas y colas", "Ejecuta push, pop, enqueue y dequeue; compara LIFO y FIFO."],
+    "arvores-binarias": ["Árboles binarios de búsqueda", "Inserta, busca y elimina nodos; explora la jerarquía y el recorrido en orden."],
     "busca-linear-e-binaria": ["Búsqueda lineal y binaria", "Compara estrategias de búsqueda y conoce el requisito de la búsqueda binaria."],
   },
 } as const;
@@ -55,7 +58,7 @@ export default function ContentSearch({ locale = "pt-br" }: { locale?: Locale })
           const category = item.category === "complexity" ? m.categoryComplexity : item.category === "data-structures" ? m.categoryData : m.categoryAlgorithms;
           return <div className="search-result" key={item.slug}>
             <div><span>{category}</span><strong>{translated?.[0] ?? item.title}</strong><p>{translated?.[1] ?? item.summary}</p></div>
-            {item.status === "available" ? <Link href={item.slug === "arrays" ? (locale === "pt-br" ? "/estruturas" : `/${locale}/estruturas`) : (locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`)} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
+            {item.status === "available" ? <Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? (locale === "pt-br" ? "/estruturas" : `/${locale}/estruturas`) : (locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`)} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
           </div>;
         })}
       </div>}
