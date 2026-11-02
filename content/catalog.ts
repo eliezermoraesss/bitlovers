@@ -63,6 +63,15 @@ export const learningCatalog: LearningContent[] = [
     status: "available",
     tags: ["ordenação", "Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort"],
   },
+  {
+    slug: "algoritmos-de-grafos",
+    title: "Algoritmos de grafos: BFS e DFS",
+    category: "algorithms",
+    summary: "Explore busca em largura e busca em profundidade com nós visitados e fronteira de exploração.",
+    level: "Intermediário",
+    status: "planned",
+    tags: ["grafos", "BFS", "DFS", "busca em largura", "busca em profundidade"],
+  },
 ];
 
 export const categoryLabels = {
