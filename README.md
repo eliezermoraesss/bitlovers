@@ -4,27 +4,25 @@
 
 BitLovers é uma plataforma educacional aberta para explorar algoritmos, complexidade computacional e estruturas de dados por meio de explicações claras, experimentos e visualizações interativas.
 
-## Objetivo da primeira versão
+## O que existe nesta fundação
 
-Entregar uma fundação sólida, acessível e extensível para:
-- explorar conceitos de ciência da computação;
-- comparar funções de crescimento assintótico;
-- experimentar operações de estruturas de dados;
-- estudar implementações de algoritmos;
-- acompanhar favoritos e progresso localmente.
+- Página inicial responsiva com identidade visual própria.
+- Catálogo tipado de conteúdos e indicação explícita do que está disponível ou planejado.
+- Primeira rota de laboratório interativo para comparar oito funções clássicas de crescimento.
+- Controle de tamanho da entrada, seleção individual de curvas e alternância entre escala linear e logarítmica.
+- Valores de referência calculados matematicamente, identificados como estimativas didáticas — não benchmarks.
+- Metadados básicos para SEO e compartilhamento.
+- Estilos responsivos e respeito à preferência por movimento reduzido.
+- Base para adicionar testes, internacionalização e persistência local nas próximas etapas.
 
-O projeto será desenvolvido em etapas. Recursos planejados não serão descritos como concluídos antes de serem implementados e validados.
+## Stack
 
-## Stack planejada
+- Next.js App Router
+- React
+- TypeScript em modo estrito
+- CSS próprio com variáveis de design
 
-- Next.js App Router e React
-- TypeScript
-- Tailwind CSS
-- Vitest e Testing Library
-- Playwright para testes ponta a ponta
-- Vercel para deploy
-
-As versões finais das dependências devem ser confirmadas e fixadas no momento da instalação.
+A configuração de dependências está em `package.json`. As versões devem ser instaladas e validadas localmente antes de considerar o build confirmado.
 
 ## Executar localmente
 
@@ -35,39 +33,53 @@ npm install
 npm run dev
 ```
 
-Abra http://localhost:3000.
+Abra http://localhost:3000. O laboratório inicial fica em `/laboratorio`.
 
-## Qualidade
+## Verificações disponíveis
 
 ```bash
 npm run lint
-npm run test
+npm run typecheck
 npm run build
 ```
 
-Os comandos estarão disponíveis conforme as respectivas ferramentas forem configuradas nas etapas iniciais.
+Execute os comandos após instalar as dependências. A execução desses comandos ainda precisa ser validada em um ambiente local ou CI antes de declarar a etapa aprovada.
+
+## Arquitetura inicial
+
+- `app/`: rotas, layout e estilos globais.
+- `app/laboratorio/`: interface do laboratório de complexidade.
+- `content/catalog.ts`: metadados do catálogo educacional.
+- `lib/complexity.ts`: tipos e funções matemáticas de referência.
+
+O conteúdo e os cálculos ficam separados da camada de apresentação para facilitar testes e expansão. O gráfico de crescimento na página inicial é uma ilustração conceitual; o laboratório separado possui controles interativos reais.
 
 ## Princípios de engenharia
 
+- Precisão técnica antes de simplificações enganosas.
 - Conteúdo educacional separado da interface.
-- Instrumentação que representa operações reais dos algoritmos.
-- Componentes acessíveis e responsivos.
-- Estimativas matemáticas claramente diferenciadas de benchmarks reais.
+- Estimativas matemáticas claramente diferenciadas de medições reais.
+- Acessibilidade e responsividade desde o início.
 - Sem autenticação ou backend obrigatório para consultar conteúdo público.
 - Sem execução de código arbitrário do usuário no servidor.
+- Funcionalidades planejadas não são apresentadas como concluídas.
 
 ## Roadmap
 
-1. Fundação da aplicação, layout, tema e internacionalização.
-2. Complexidade computacional e laboratório de Big O.
-3. Estruturas de dados com visualizações interativas.
-4. Algoritmos de busca, ordenação e recursividade.
-5. Trilhas, exercícios, favoritos, progresso e glossário.
-6. Expansão para novos temas conforme a necessidade.
+1. **Fundação:** layout, navegação, tema e internacionalização.
+2. **Complexidade:** ampliar explicações, testes e exemplos instrumentados.
+3. **Estruturas de dados:** visualizações operacionais de arrays, pilhas, filas, mapas hash e árvores.
+4. **Algoritmos:** busca, ordenação, recursividade e código copiável.
+5. **Aprendizagem:** trilhas, exercícios, favoritos, progresso local e glossário.
+6. **Expansão:** novos temas conforme a demanda.
+
+## Deploy
+
+A aplicação está sendo preparada para deploy na Vercel. Antes da publicação, instale as dependências e confirme lint, typecheck e build. Ainda não há URL de produção validada.
 
 ## Contribuição
 
-Issues e pull requests são bem-vindos. Ao contribuir, priorize precisão técnica, testes para regras de domínio e documentação de decisões relevantes.
+Issues e pull requests são bem-vindos. Priorize precisão técnica, testes para regras de domínio e documentação de decisões relevantes.
 
 ## Licença
 
