@@ -24,7 +24,7 @@ export const learningCatalog: LearningContent[] = [
     category: "data-structures",
     summary: "Explore índices, acesso direto, inserção e limites da estrutura.",
     level: "Iniciante",
-    status: "planned",
+    status: "available",
     tags: ["array", "vetor", "memória"],
   },
   {
