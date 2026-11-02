@@ -40,10 +40,11 @@ Abra http://localhost:3000. O laboratório inicial fica em `/laboratorio`.
 ```bash
 npm run lint
 npm run typecheck
+npm run test
 npm run build
 ```
 
-Execute os comandos após instalar as dependências. A execução desses comandos ainda precisa ser validada em um ambiente local ou CI antes de declarar a etapa aprovada.
+Execute os comandos após instalar as dependências. Os testes unitários iniciais cobrem o catálogo de funções de crescimento, valores de referência e validação do tamanho da entrada. A execução de todos os comandos ainda precisa ser validada em CI ou ambiente local antes de declarar a etapa aprovada.
 
 ## Arquitetura inicial
 
