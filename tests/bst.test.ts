@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { containsBST, countBST, inOrderBST, insertBST, removeBST } from "../lib/bst";
+import { containsBST, countBST, inOrderBST, insertBST, removeBST, type BSTNode } from "../lib/bst";
 
 describe("binary search tree operations", () => {
   it("inserts values and returns sorted in-order traversal", () => {
-    let root = null;
+    let root: BSTNode | null = null;
     for (const value of [8, 3, 10, 1, 6, 14, 4, 7, 13]) root = insertBST(root, value);
     expect(inOrderBST(root)).toEqual([1, 3, 4, 6, 7, 8, 10, 13, 14]);
     expect(countBST(root)).toBe(9);
@@ -21,7 +21,7 @@ describe("binary search tree operations", () => {
   });
 
   it("removes leaf nodes, one-child nodes, and two-child nodes", () => {
-    let root = null;
+    let root: BSTNode | null = null;
     for (const value of [8, 3, 10, 1, 6, 14, 4, 7, 13]) root = insertBST(root, value);
     root = removeBST(root, 1);
     root = removeBST(root, 14);
