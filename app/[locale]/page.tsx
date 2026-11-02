@@ -120,7 +120,7 @@ export default async function LocalizedHomePage({ params }: Props) {
           {cards.map((item,index)=><article className={item.available?"content-card featured-card":"content-card"} key={item.slug}>
             <div className="card-top"><span className="card-number">0{index+1}</span><span className={item.available?"availability available":"availability"}>{item.available?m.available:m.roadmap}</span></div>
             <div className="card-category">{item.category}</div><h3>{item.title}</h3><p>{item.summary}</p>
-            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={`/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
+            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={item.slug === "arrays" ? `/${locale}/estruturas` : `/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
           </article>)}
         </div>
       </section>
