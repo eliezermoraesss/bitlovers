@@ -54,6 +54,15 @@ export const learningCatalog: LearningContent[] = [
     status: "available",
     tags: ["busca", "algoritmos", "ordenação", "busca linear", "busca binária"],
   },
+  {
+    slug: "algoritmos-de-ordenacao",
+    title: "Algoritmos de ordenação",
+    category: "algorithms",
+    summary: "Compare Bubble Sort, Selection Sort, Insertion Sort e Merge Sort com animações e contagem de operações.",
+    level: "Intermediário",
+    status: "planned",
+    tags: ["ordenação", "Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort"],
+  },
 ];
 
 export const categoryLabels = {
