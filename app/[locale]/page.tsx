@@ -64,7 +64,7 @@ export default async function LocalizedHomePage({ params }: Props) {
     { slug: "arrays", title: catalog.arraysTitle, summary: catalog.arraysSummary, category: m.categoryData, available: true },
     { slug: "pilhas-e-filas", title: catalog.stacksTitle, summary: catalog.stacksSummary, category: m.categoryData, available: true },
     { slug: "arvores-binarias", title: catalog.treeTitle, summary: catalog.treeSummary, category: m.categoryData, available: true },
-    { slug: "busca-linear-e-binaria", title: catalog.searchTitle, summary: catalog.searchSummary, category: m.categoryAlgorithms, available: false },
+    { slug: "busca-linear-e-binaria", title: catalog.searchTitle, summary: catalog.searchSummary, category: m.categoryAlgorithms, available: true },
   ];
   const steps = [
     { n: "01", title: m.step1, text: m.step1Text },
