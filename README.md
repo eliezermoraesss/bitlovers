@@ -8,6 +8,9 @@ BitLovers é uma plataforma educacional aberta para explorar algoritmos, complex
 
 - Página inicial responsiva com identidade visual própria.
 - Preferência de tema claro, escuro ou sistema, preservada no navegador.
+- Rotas localizadas para português brasileiro (`/pt-br`), inglês (`/en`) e espanhol (`/es`), incluindo o laboratório de complexidade.
+- Dicionários de interface tipados e seletor de idioma acessível.
+- Busca de conteúdos com rótulos e descrições localizados nas três línguas.
 - Busca de conteúdos por título, resumo, categoria e palavras-chave, distinguindo conteúdos disponíveis dos planejados.
 - Catálogo tipado de conteúdos e indicação explícita do que está disponível ou planejado.
 - Primeira rota de laboratório interativo para comparar oito funções clássicas de crescimento.
@@ -51,7 +54,10 @@ Execute os comandos após instalar as dependências. Os testes unitários inicia
 ## Arquitetura inicial
 
 - `app/`: rotas, layout e estilos globais.
-- `app/laboratorio/`: interface do laboratório de complexidade.
+- `app/laboratorio/`: interface do laboratório de complexidade em português.
+- `app/[locale]/`: páginas localizadas em pt-BR, inglês e espanhol.
+- `lib/i18n.ts`: dicionários e tipos para os idiomas suportados.
+- `app/i18n.css`: estilos do seletor de idioma.
 - `content/catalog.ts`: metadados do catálogo educacional.
 - `lib/complexity.ts`: tipos e funções matemáticas de referência.
 
@@ -73,7 +79,7 @@ O conteúdo e os cálculos ficam separados da camada de apresentação para faci
 2. **Complexidade:** ampliar explicações, testes e exemplos instrumentados.
 3. **Estruturas de dados:** visualizações operacionais de arrays, pilhas, filas, mapas hash e árvores.
 4. **Algoritmos:** busca, ordenação, recursividade e código copiável.
-5. **Aprendizagem:** internacionalização completa (pt-BR, en e es), trilhas, exercícios, favoritos, progresso local e glossário.
+5. **Aprendizagem:** ampliar a cobertura de tradução do catálogo e das páginas de conteúdo, além de trilhas, exercícios, favoritos, progresso local e glossário.
 6. **Expansão:** novos temas conforme a demanda.
 
 ## Deploy
