@@ -58,7 +58,7 @@ export default function ContentSearch({ locale = "pt-br" }: { locale?: Locale })
           const category = item.category === "complexity" ? m.categoryComplexity : item.category === "data-structures" ? m.categoryData : m.categoryAlgorithms;
           return <div className="search-result" key={item.slug}>
             <div><span>{category}</span><strong>{translated?.[0] ?? item.title}</strong><p>{translated?.[1] ?? item.summary}</p></div>
-            {item.status === "available" ? <Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? (locale === "pt-br" ? "/estruturas" : `/${locale}/estruturas`) : (locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`)} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
+            {item.status === "available" ? <Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? (locale === "pt-br" ? "/estruturas" : `/${locale}/estruturas`) : item.slug === "busca-linear-e-binaria" ? (locale === "pt-br" ? "/algoritmos" : `/${locale}/algoritmos`) : (locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`)} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
           </div>;
         })}
       </div>}
