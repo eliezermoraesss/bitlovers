@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { complexityFunctions } from "@/lib/complexity";
 import { learningCatalog, categoryLabels } from "@/content/catalog";
+import ThemeToggle from "@/components/theme-toggle";
 
 const paths = [
   { number: "01", title: "Entender", text: "Comece pelo problema e construa a intuição antes da fórmula." },
@@ -23,7 +24,7 @@ export default function HomePage() {
           <a href="#metodo">Método</a>
           <a href="#sobre">Sobre</a>
         </nav>
-        <a className="header-cta" href="#explorar">Começar a aprender <span aria-hidden="true">↗</span></a>
+        <div className="header-actions"><ThemeToggle /><a className="header-cta" href="#explorar">Começar a aprender <span aria-hidden="true">↗</span></a></div>
       </header>
 
       <section className="hero shell">
