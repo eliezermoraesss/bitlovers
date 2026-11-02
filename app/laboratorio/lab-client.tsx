@@ -77,9 +77,9 @@ export default function ComplexityLab() {
           <title id="lab-chart-title">Comparação interativa de funções de complexidade</title>
           <desc id="lab-chart-desc">Gráfico de funções de crescimento para entradas de 1 até {n}. Marque ou desmarque curvas e altere a escala.</desc>
           {[40, 92, 145, 198, 250].map((y) => <line key={y} x1="48" y1={y} x2="668" y2={y} className="grid-line" />)}
-          {[0, 4, 8, 12, 16, 20].filter((tick) => tick < n || tick === n).map((tick) => {
-            const x = 48 + (tick / Math.max(1, n - 1)) * 620;
-            return <g key={tick}><line x1={x} y1="40" x2={x} y2="250" className="grid-line vertical" /><text x={x} y="270" textAnchor="middle" className="axis-label">{tick + 1}</text></g>;
+          {[1, 5, 9, 13, 17, 20].filter((tick) => tick <= n).map((tick) => {
+            const x = 48 + ((tick - 1) / Math.max(1, n - 1)) * 620;
+            return <g key={tick}><line x1={x} y1="40" x2={x} y2="250" className="grid-line vertical" /><text x={x} y="270" textAnchor="middle" className="axis-label">{tick}</text></g>;
           })}
           {points.map((point) => <path key={point.id} d={point.path} fill="none" stroke={point.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />)}
           <text x="48" y="18" className="axis-label">ENTRADA n</text>
