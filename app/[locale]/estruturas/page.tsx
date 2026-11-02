@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import DataStructuresLab from "@/components/data-structures-lab";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeToggle from "@/components/theme-toggle";
-import { isLocale, locales, messages } from "@/lib/i18n";
+import { isLocale, locales } from "@/lib/i18n";
 
 type Props = { params: Promise<{ locale: string }> };
 
