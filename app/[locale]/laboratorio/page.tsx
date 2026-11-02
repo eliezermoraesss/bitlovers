@@ -70,7 +70,7 @@ export default async function LocalizedComplexityPage({ params }: Props) {
       <div className="eyebrow">{m.eyebrow}</div>
       <h1 className="lab-page-title">{m.title1}<br /><span>{m.title2}</span></h1>
       <p className="lab-page-intro">{m.intro}</p>
-      <ComplexityLab />
+      <ComplexityLab locale={locale} />
       <section className="lab-explainer">
         <div><span className="eyebrow">{m.interpretation}</span><h2>{m.explanationTitle}</h2></div>
         <div>
