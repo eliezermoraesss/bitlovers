@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description:
     "Aprenda algoritmos, complexidade computacional e estruturas de dados com explicações claras e laboratórios interativos.",
   applicationName: "BitLovers",
-  metadataBase: new URL("https://bitlovers.vercel.app"),
   openGraph: {
     title: "BitLovers",
     description: "Entenda a tecnologia. Visualize os conceitos. Aprenda fazendo.",
