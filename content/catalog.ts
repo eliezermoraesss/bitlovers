@@ -51,8 +51,8 @@ export const learningCatalog: LearningContent[] = [
     category: "algorithms",
     summary: "Compare estratégias de busca e entenda o pré-requisito da busca binária.",
     level: "Iniciante",
-    status: "planned",
-    tags: ["busca", "algoritmos", "ordenação"],
+    status: "available",
+    tags: ["busca", "algoritmos", "ordenação", "busca linear", "busca binária"],
   },
 ];
 
