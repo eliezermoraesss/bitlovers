@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DataStructuresLab from "@/components/data-structures-lab";
+import BinarySearchTreeLab from "@/components/binary-search-tree-lab";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeToggle from "@/components/theme-toggle";
 
@@ -21,6 +22,9 @@ export default function DataStructuresPage() {
     <div className="eyebrow">ARRAYS · PILHAS · FILAS</div>
     <h2>Experimente as operações</h2>
     <DataStructuresLab locale="pt-br" />
+    <div className="eyebrow">ÁRVORES · BUSCA</div>
+    <h2>Explore uma estrutura hierárquica</h2>
+    <BinarySearchTreeLab locale="pt-br" />
     <p className="lab-footnote">Esta visualização mantém os dados apenas durante a sessão da página. Ela é uma demonstração educacional, não um armazenamento persistente.</p>
   </main>;
 }
