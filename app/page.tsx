@@ -100,7 +100,7 @@ export default function HomePage() {
               <li><span>✓</span> Entenda a diferença entre crescimento e tempo real</li>
               <li><span>✓</span> Explore exemplos e hipóteses</li>
             </ul>
-            <p className="lab-status">O gráfico desta página é uma ilustração conceitual. O laboratório com controles interativos está no roadmap de implementação.</p>
+            <p className="lab-status">Explore funções com controles reais, altere o tamanho da entrada e compare escalas de visualização.</p><a className="lab-link" href="/laboratorio">Abrir laboratório interativo <span aria-hidden="true">→</span></a>
           </div>
           <div className="complexity-list">
             {complexityFunctions.map((fn, i) => (
