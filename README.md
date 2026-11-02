@@ -14,7 +14,7 @@ BitLovers é uma plataforma educacional aberta para explorar algoritmos, complex
 - Busca de conteúdos por título, resumo, categoria e palavras-chave, distinguindo conteúdos disponíveis dos planejados.
 - Laboratório operacional para arrays, pilhas e filas com inserção, remoção, limpeza e estado visível.
 - Árvore binária de busca interativa com inserção, pesquisa, remoção, percurso em ordem e visualização hierárquica.
-- Laboratório de busca linear e binária com trilha de comparações navegável, alvo configurável e vetor editável.
+- Laboratório de busca linear e binária com trilha de comparações navegável, alvo configurável e vetor editável.\n- Laboratório interativo de Bubble Sort, Selection Sort, Insertion Sort e Merge Sort com histórico de estados, comparações, escritas, complexidade e estabilidade.
 - Exemplos centrais de busca em Java, Python e C#, com análise de complexidade e requisito de ordenação da busca binária.
 - Testes unitários para inserção, busca, remoção, valores duplicados e percurso em ordem da BST.
 - Catálogo tipado de conteúdos e indicação explícita do que está disponível ou planejado.
@@ -44,7 +44,7 @@ npm install
 npm run dev
 ```
 
-Abra http://localhost:3000. O laboratório de complexidade fica em `/laboratorio`, as estruturas em `/estruturas` e os algoritmos de busca em `/algoritmos`.
+Abra http://localhost:3000. O laboratório de complexidade fica em `/laboratorio`, as estruturas em `/estruturas` e os algoritmos de busca em `/algoritmos` e os de ordenação em `/ordenacao`.
 
 ## Verificações disponíveis
 

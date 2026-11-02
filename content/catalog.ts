@@ -60,7 +60,7 @@ export const learningCatalog: LearningContent[] = [
     category: "algorithms",
     summary: "Compare Bubble Sort, Selection Sort, Insertion Sort e Merge Sort com animações e contagem de operações.",
     level: "Intermediário",
-    status: "planned",
+    status: "available",
     tags: ["ordenação", "Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort"],
   },
 ];
