@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ThemeToggle from "@/components/theme-toggle";
 import LanguageSwitcher from "@/components/language-switcher";
+import ContentSearch from "@/components/content-search";
 import { complexityFunctions } from "@/lib/complexity";
 import { isLocale, localeHtmlLang, locales, messages, type Locale } from "@/lib/i18n";
 
@@ -86,6 +87,7 @@ export default async function LocalizedHomePage({ params }: Props) {
           <h1>{m.headline1}<br /><span>{m.headline2}</span><br />{m.headline3}</h1>
           <p className="hero-description">{m.intro}</p>
           <div className="hero-actions"><a className="button button-primary" href="#explorar">{m.exploreContent} <span aria-hidden="true">→</span></a><a className="button button-secondary" href="#metodo">{m.learnMethod}</a></div>
+          <ContentSearch locale={locale} />
           <div className="hero-note"><span className="tiny-check">✓</span> {m.openContent}</div>
         </div>
         <div className="hero-visual" aria-label={m.curveTitle}>
