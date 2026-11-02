@@ -12,6 +12,9 @@ BitLovers é uma plataforma educacional aberta para explorar algoritmos, complex
 - Dicionários de interface tipados e seletor de idioma acessível.
 - Busca de conteúdos com rótulos e descrições localizados nas três línguas.
 - Busca de conteúdos por título, resumo, categoria e palavras-chave, distinguindo conteúdos disponíveis dos planejados.
+- Laboratório operacional para arrays, pilhas e filas com inserção, remoção, limpeza e estado visível.
+- Árvore binária de busca interativa com inserção, pesquisa, remoção, percurso em ordem e visualização hierárquica.
+- Testes unitários para inserção, busca, remoção, valores duplicados e percurso em ordem da BST.
 - Catálogo tipado de conteúdos e indicação explícita do que está disponível ou planejado.
 - Primeira rota de laboratório interativo para comparar oito funções clássicas de crescimento.
 - Controle de tamanho da entrada, seleção individual de curvas e alternância entre escala linear e logarítmica.
@@ -49,7 +52,7 @@ npm run test
 npm run build
 ```
 
-Execute os comandos após instalar as dependências. Os testes unitários iniciais cobrem o catálogo de funções de crescimento, valores de referência e validação do tamanho da entrada. A execução de todos os comandos ainda precisa ser validada em CI ou ambiente local antes de declarar a etapa aprovada.
+Execute os comandos após instalar as dependências. Os testes unitários iniciais cobrem o catálogo de funções de crescimento, valores de referência e validação do tamanho da entrada. A validação contínua é executada pelo GitHub Actions a cada commit; consulte a aba Actions para o estado do commit mais recente.
 
 ## Arquitetura inicial
 
@@ -77,7 +80,7 @@ O conteúdo e os cálculos ficam separados da camada de apresentação para faci
 
 1. **Fundação:** layout, navegação, tema e internacionalização.
 2. **Complexidade:** ampliar explicações, testes e exemplos instrumentados.
-3. **Estruturas de dados:** visualizações operacionais de arrays, pilhas, filas, mapas hash e árvores.
+3. **Estruturas de dados:** arrays, pilhas, filas e árvore binária de busca já possuem visualizações operacionais. Próximos módulos: mapas hash e outras árvores.
 4. **Algoritmos:** busca, ordenação, recursividade e código copiável.
 5. **Aprendizagem:** ampliar a cobertura de tradução do catálogo e das páginas de conteúdo, além de trilhas, exercícios, favoritos, progresso local e glossário.
 6. **Expansão:** novos temas conforme a demanda.
