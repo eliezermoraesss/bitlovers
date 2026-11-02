@@ -121,3 +121,30 @@ h1 span{color:var(--mint)}
 .lab-explainer{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;margin-top:65px}.lab-explainer h2{font:650 25px var(--display);letter-spacing:-.8px;margin-top:13px}.lab-explainer p{font-size:12px;color:var(--muted);line-height:1.9;margin-bottom:14px}.lab-explainer strong{color:var(--text)}
 .lab-link{display:inline-flex;align-items:center;gap:10px;color:var(--mint);font-size:12px;font-weight:700;margin-top:10px}.lab-link:hover{text-decoration:underline}
 @media(max-width:700px){.lab-page{padding-top:25px}.back-link{margin-bottom:32px}.lab-page-title{font-size:41px;letter-spacing:-1.8px}.interactive-lab{padding:15px}.lab-controls{grid-template-columns:1fr;gap:25px}.lab-chart{padding:12px 8px 5px}.lab-chart-title{font-size:7px}.lab-results{grid-template-columns:repeat(2,1fr)}.lab-explainer{grid-template-columns:1fr;gap:12px;margin-top:45px}}
+
+
+/* Theme preference: light mode overrides the shared design tokens. */
+html[data-theme="light"]{color-scheme:light;--bg:#f5f7fa;--panel:#ffffff;--panel-2:#edf1f5;--line:#dce2e9;--text:#202735;--muted:#596577;--faint:#6c7788;--mint:#087f5b;--blue:#1769aa;--orange:#b85220;--purple:#7045a0}
+html[data-theme="light"] .site-header{background:rgba(245,247,250,.92);border-bottom-color:#e0e5eb}
+html[data-theme="light"] .brand-light{color:#687386}
+html[data-theme="light"] .hero-visual{background:linear-gradient(145deg,#fff,#f0f4f7);border-color:#dce2e9;box-shadow:0 25px 80px #2733480c}
+html[data-theme="light"] .visual-topline{color:#687386}
+html[data-theme="light"] .grid-line{stroke:#dce3e9}
+html[data-theme="light"] .chart-annotation{fill:#303b4b}
+html[data-theme="light"] .axis-label{fill:#6c7788}
+html[data-theme="light"] .visual-caption{color:#687386}
+html[data-theme="light"] .featured-card{background:linear-gradient(150deg,#e8f5ef,#fff 75%);border-color:#b9dfd0}
+html[data-theme="light"] .lab-section{background:#eef2f6;border-color:#dce2e9}
+html[data-theme="light"] .lab-copy .lab-status{color:#596577;border-left-color:#aab5c3}
+html[data-theme="light"] .complexity-list{background:#fff}
+html[data-theme="light"] .complexity-row{border-bottom-color:#e1e6ec}
+html[data-theme="light"] .complexity-name{color:#303b4b}
+html[data-theme="light"] .complexity-description{color:#687386}
+html[data-theme="light"] .lab-chart{background:#f8fafc;border-color:#dce2e9}
+html[data-theme="light"] .lab-chart-title{color:#596577}
+html[data-theme="light"] .lab-result{background:#fff}
+.header-actions{display:flex;align-items:center;gap:10px}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--muted);font:11px var(--sans);cursor:pointer}
+.theme-toggle:hover{border-color:var(--mint);color:var(--text)}
+.theme-toggle>span:first-child{font-size:15px;color:var(--mint)}
+@media(max-width:700px){.header-actions{gap:6px}.theme-toggle{padding:8px}.theme-toggle-label{display:none}.header-cta{max-width:138px}}
