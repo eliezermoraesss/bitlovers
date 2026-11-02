@@ -87,7 +87,7 @@ export default function HomePage() {
               <div className="card-category">{categoryLabels[item.category]}</div>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
-              <div className="card-bottom"><span>{item.level}</span>{item.status === "available" ? <a href="#laboratorio">Explorar módulo <span aria-hidden="true">↗</span></a> : <span className="planned-label">Planejado</span>}</div>
+              <div className="card-bottom"><span>{item.level}</span>{item.status === "available" ? <Link href={item.slug === "arrays" ? "/estruturas" : "#laboratorio"}>Explorar módulo <span aria-hidden="true">↗</span></Link> : <span className="planned-label">Planejado</span>}</div>
             </article>
           ))}
         </div>
