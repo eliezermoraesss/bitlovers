@@ -2,6 +2,7 @@ import Link from "next/link";
 import { complexityFunctions } from "@/lib/complexity";
 import { learningCatalog, categoryLabels } from "@/content/catalog";
 import ThemeToggle from "@/components/theme-toggle";
+import ContentSearch from "@/components/content-search";
 
 const paths = [
   { number: "01", title: "Entender", text: "Comece pelo problema e construa a intuição antes da fórmula." },
@@ -36,6 +37,7 @@ export default function HomePage() {
             <a className="button button-primary" href="#explorar">Explorar conteúdos <span aria-hidden="true">→</span></a>
             <a className="button button-secondary" href="#metodo">Conhecer o método</a>
           </div>
+          <ContentSearch />
           <div className="hero-note"><span className="tiny-check">✓</span> Conteúdo aberto. Aprenda no seu ritmo.</div>
         </div>
 
