@@ -34,18 +34,21 @@ const catalogTranslations = {
     complexTitle: "Complexidade computacional", complexSummary: "Entenda como o custo de um algoritmo cresce conforme a entrada aumenta.",
     arraysTitle: "Arrays e vetores", arraysSummary: "Explore índices, acesso direto, inserção e limites da estrutura.",
     stacksTitle: "Pilhas e filas", stacksSummary: "Compare LIFO e FIFO com operações e exemplos cotidianos.",
+    treeTitle: "Árvores binárias de busca", treeSummary: "Insira, busque e remova nós; explore a hierarquia e o percurso em ordem.",
     searchTitle: "Busca linear e binária", searchSummary: "Compare estratégias de busca e entenda o pré-requisito da busca binária.",
   },
   en: {
     complexTitle: "Computational complexity", complexSummary: "Understand how an algorithm's cost grows as input size increases.",
     arraysTitle: "Arrays", arraysSummary: "Explore indexes, direct access, insertion, and structural limits.",
     stacksTitle: "Stacks and queues", stacksSummary: "Compare LIFO and FIFO through operations and everyday examples.",
+    treeTitle: "Binary search trees", treeSummary: "Insert, search, and remove nodes; explore the hierarchy and in-order traversal.",
     searchTitle: "Linear and binary search", searchSummary: "Compare search strategies and understand binary search prerequisites.",
   },
   es: {
     complexTitle: "Complejidad computacional", complexSummary: "Comprende cómo crece el costo de un algoritmo cuando aumenta la entrada.",
     arraysTitle: "Arrays y vectores", arraysSummary: "Explora índices, acceso directo, inserción y límites de la estructura.",
     stacksTitle: "Pilas y colas", stacksSummary: "Compara LIFO y FIFO mediante operaciones y ejemplos cotidianos.",
+    treeTitle: "Árboles binarios de búsqueda", treeSummary: "Inserta, busca y elimina nodos; explora la jerarquía y el recorrido en orden.",
     searchTitle: "Búsqueda lineal y binaria", searchSummary: "Compara estrategias de búsqueda y conoce el requisito de la búsqueda binaria.",
   },
 } as const;
@@ -58,8 +61,9 @@ export default async function LocalizedHomePage({ params }: Props) {
   const catalog = catalogTranslations[locale];
   const cards = [
     { slug: "complexidade", title: catalog.complexTitle, summary: catalog.complexSummary, category: m.categoryComplexity, available: true },
-    { slug: "arrays", title: catalog.arraysTitle, summary: catalog.arraysSummary, category: m.categoryData, available: false },
-    { slug: "pilhas-e-filas", title: catalog.stacksTitle, summary: catalog.stacksSummary, category: m.categoryData, available: false },
+    { slug: "arrays", title: catalog.arraysTitle, summary: catalog.arraysSummary, category: m.categoryData, available: true },
+    { slug: "pilhas-e-filas", title: catalog.stacksTitle, summary: catalog.stacksSummary, category: m.categoryData, available: true },
+    { slug: "arvores-binarias", title: catalog.treeTitle, summary: catalog.treeSummary, category: m.categoryData, available: true },
     { slug: "busca-linear-e-binaria", title: catalog.searchTitle, summary: catalog.searchSummary, category: m.categoryAlgorithms, available: false },
   ];
   const steps = [
@@ -120,7 +124,7 @@ export default async function LocalizedHomePage({ params }: Props) {
           {cards.map((item,index)=><article className={item.available?"content-card featured-card":"content-card"} key={item.slug}>
             <div className="card-top"><span className="card-number">0{index+1}</span><span className={item.available?"availability available":"availability"}>{item.available?m.available:m.roadmap}</span></div>
             <div className="card-category">{item.category}</div><h3>{item.title}</h3><p>{item.summary}</p>
-            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={item.slug === "arrays" ? `/${locale}/estruturas` : `/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
+            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? `/${locale}/estruturas` : `/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
           </article>)}
         </div>
       </section>
