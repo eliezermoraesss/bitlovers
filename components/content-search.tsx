@@ -55,7 +55,7 @@ export default function ContentSearch({ locale = "pt-br" }: { locale?: Locale })
           const category = item.category === "complexity" ? m.categoryComplexity : item.category === "data-structures" ? m.categoryData : m.categoryAlgorithms;
           return <div className="search-result" key={item.slug}>
             <div><span>{category}</span><strong>{translated?.[0] ?? item.title}</strong><p>{translated?.[1] ?? item.summary}</p></div>
-            {item.status === "available" ? <Link href={locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
+            {item.status === "available" ? <Link href={item.slug === "arrays" ? (locale === "pt-br" ? "/estruturas" : `/${locale}/estruturas`) : (locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`)} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
           </div>;
         })}
       </div>}
