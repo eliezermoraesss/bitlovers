@@ -36,6 +36,7 @@ const catalogTranslations = {
     stacksTitle: "Pilhas e filas", stacksSummary: "Compare LIFO e FIFO com operações e exemplos cotidianos.",
     treeTitle: "Árvores binárias de busca", treeSummary: "Insira, busque e remova nós; explore a hierarquia e o percurso em ordem.",
     searchTitle: "Busca linear e binária", searchSummary: "Compare estratégias de busca e entenda o pré-requisito da busca binária.",
+    sortingTitle: "Algoritmos de ordenação", sortingSummary: "Compare Bubble, Selection, Insertion e Merge Sort passo a passo.",
   },
   en: {
     complexTitle: "Computational complexity", complexSummary: "Understand how an algorithm's cost grows as input size increases.",
@@ -43,6 +44,7 @@ const catalogTranslations = {
     stacksTitle: "Stacks and queues", stacksSummary: "Compare LIFO and FIFO through operations and everyday examples.",
     treeTitle: "Binary search trees", treeSummary: "Insert, search, and remove nodes; explore the hierarchy and in-order traversal.",
     searchTitle: "Linear and binary search", searchSummary: "Compare search strategies and understand binary search prerequisites.",
+    sortingTitle: "Sorting algorithms", sortingSummary: "Compare Bubble, Selection, Insertion, and Merge Sort step by step.",
   },
   es: {
     complexTitle: "Complejidad computacional", complexSummary: "Comprende cómo crece el costo de un algoritmo cuando aumenta la entrada.",
@@ -50,6 +52,7 @@ const catalogTranslations = {
     stacksTitle: "Pilas y colas", stacksSummary: "Compara LIFO y FIFO mediante operaciones y ejemplos cotidianos.",
     treeTitle: "Árboles binarios de búsqueda", treeSummary: "Inserta, busca y elimina nodos; explora la jerarquía y el recorrido en orden.",
     searchTitle: "Búsqueda lineal y binaria", searchSummary: "Compara estrategias de búsqueda y conoce el requisito de la búsqueda binaria.",
+    sortingTitle: "Algoritmos de ordenación", sortingSummary: "Compara Bubble, Selection, Insertion y Merge Sort paso a paso.",
   },
 } as const;
 
@@ -65,6 +68,7 @@ export default async function LocalizedHomePage({ params }: Props) {
     { slug: "pilhas-e-filas", title: catalog.stacksTitle, summary: catalog.stacksSummary, category: m.categoryData, available: true },
     { slug: "arvores-binarias", title: catalog.treeTitle, summary: catalog.treeSummary, category: m.categoryData, available: true },
     { slug: "busca-linear-e-binaria", title: catalog.searchTitle, summary: catalog.searchSummary, category: m.categoryAlgorithms, available: true },
+    { slug: "algoritmos-de-ordenacao", title: catalog.sortingTitle, summary: catalog.sortingSummary, category: m.categoryAlgorithms, available: true },
   ];
   const steps = [
     { n: "01", title: m.step1, text: m.step1Text },
@@ -124,7 +128,7 @@ export default async function LocalizedHomePage({ params }: Props) {
           {cards.map((item,index)=><article className={item.available?"content-card featured-card":"content-card"} key={item.slug}>
             <div className="card-top"><span className="card-number">0{index+1}</span><span className={item.available?"availability available":"availability"}>{item.available?m.available:m.roadmap}</span></div>
             <div className="card-category">{item.category}</div><h3>{item.title}</h3><p>{item.summary}</p>
-            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? `/${locale}/estruturas` : item.slug === "busca-linear-e-binaria" ? `/${locale}/algoritmos` : `/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
+            <div className="card-bottom"><span>{m.levelBeginner}</span>{item.available?<Link href={["arrays", "pilhas-e-filas", "arvores-binarias"].includes(item.slug) ? `/${locale}/estruturas` : item.slug === "busca-linear-e-binaria" ? `/${locale}/algoritmos` : item.slug === "algoritmos-de-ordenacao" ? `/${locale}/ordenacao` : `/${locale}/laboratorio`}>{m.exploreModule} <span aria-hidden="true">↗</span></Link>:<span className="planned-label">{m.planned}</span>}</div>
           </article>)}
         </div>
       </section>
