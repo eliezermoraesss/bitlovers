@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import "./i18n.css";
 import "./structures.css";
+import "./algorithms.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
