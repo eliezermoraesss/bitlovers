@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import "./i18n.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
