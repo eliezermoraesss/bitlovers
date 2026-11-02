@@ -2,48 +2,63 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { learningCatalog, categoryLabels } from "@/content/catalog";
+import { learningCatalog } from "@/content/catalog";
+import { messages, type Locale } from "@/lib/i18n";
 
-export default function ContentSearch() {
+const translatedCatalog = {
+  "pt-br": {
+    complexidade: ["Complexidade computacional", "Entenda como o custo de um algoritmo cresce conforme a entrada aumenta."],
+    arrays: ["Arrays e vetores", "Explore índices, acesso direto, inserção e limites da estrutura."],
+    "pilhas-e-filas": ["Pilhas e filas", "Compare LIFO e FIFO com operações e exemplos cotidianos."],
+    "busca-linear-e-binaria": ["Busca linear e binária", "Compare estratégias de busca e entenda o pré-requisito da busca binária."],
+  },
+  en: {
+    complexidade: ["Computational complexity", "Understand how an algorithm's cost grows as input size increases."],
+    arrays: ["Arrays", "Explore indexes, direct access, insertion, and structural limits."],
+    "pilhas-e-filas": ["Stacks and queues", "Compare LIFO and FIFO through operations and everyday examples."],
+    "busca-linear-e-binaria": ["Linear and binary search", "Compare search strategies and understand binary search prerequisites."],
+  },
+  es: {
+    complexidade: ["Complejidad computacional", "Comprende cómo crece el costo de un algoritmo cuando aumenta la entrada."],
+    arrays: ["Arrays y vectores", "Explora índices, acceso directo, inserción y límites de la estructura."],
+    "pilhas-e-filas": ["Pilas y colas", "Compara LIFO y FIFO mediante operaciones y ejemplos cotidianos."],
+    "busca-linear-e-binaria": ["Búsqueda lineal y binaria", "Compara estrategias de búsqueda y conoce el requisito de la búsqueda binaria."],
+  },
+} as const;
+
+export default function ContentSearch({ locale = "pt-br" }: { locale?: Locale }) {
   const [query, setQuery] = useState("");
-  const normalizedQuery = query.trim().toLocaleLowerCase("pt-BR");
+  const m = messages[locale];
+  const numberLocale = locale === "pt-br" ? "pt-BR" : locale === "es" ? "es-ES" : "en-US";
+  const normalizedQuery = query.trim().toLocaleLowerCase(numberLocale);
   const results = useMemo(() => {
     if (!normalizedQuery) return [];
-    return learningCatalog.filter((item) =>
-      [item.title, item.summary, ...item.tags, categoryLabels[item.category]]
-        .some((value) => value.toLocaleLowerCase("pt-BR").includes(normalizedQuery)),
-    ).slice(0, 6);
-  }, [normalizedQuery]);
+    return learningCatalog.filter((item) => {
+      const translated = translatedCatalog[locale][item.slug as keyof (typeof translatedCatalog)[typeof locale]];
+      const category = item.category === "complexity" ? m.categoryComplexity : item.category === "data-structures" ? m.categoryData : m.categoryAlgorithms;
+      return [item.title, item.summary, ...item.tags, category, ...(translated ?? [])]
+        .some((value) => value.toLocaleLowerCase(numberLocale).includes(normalizedQuery));
+    }).slice(0, 6);
+  }, [locale, m, normalizedQuery, numberLocale]);
 
   return (
     <div className="content-search" role="search">
-      <label className="sr-only" htmlFor="content-search-input">Buscar conteúdos educacionais</label>
+      <label className="sr-only" htmlFor={`content-search-input-${locale}`}>{m.searchLabel}</label>
       <span className="search-symbol" aria-hidden="true">⌕</span>
-      <input
-        id="content-search-input"
-        type="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder="Buscar algoritmos, estruturas, conceitos..."
-        autoComplete="off"
-        aria-describedby="search-hint"
-      />
-      <span className="search-shortcut" aria-hidden="true">BUSCAR</span>
-      <span id="search-hint" className="sr-only">Digite um título, categoria ou palavra-chave.</span>
-      {normalizedQuery && (
-        <div className="search-results" aria-live="polite">
-          {results.length === 0 ? (
-            <p className="search-empty">Nenhum conteúdo encontrado para “{query}”. Tente outro termo.</p>
-          ) : results.map((item) => (
-            <div className="search-result" key={item.slug}>
-              <div><span>{categoryLabels[item.category]}</span><strong>{item.title}</strong><p>{item.summary}</p></div>
-              {item.status === "available"
-                ? <Link href="/laboratorio" aria-label={`Abrir ${item.title}`}>Abrir ↗</Link>
-                : <span className="search-planned">Planejado</span>}
-            </div>
-          ))}
-        </div>
-      )}
+      <input id={`content-search-input-${locale}`} type="search" value={query} onChange={(event) => setQuery(event.target.value)}
+        placeholder={m.searchPlaceholder} autoComplete="off" aria-describedby={`search-hint-${locale}`} />
+      <span className="search-shortcut" aria-hidden="true">{locale === "pt-br" ? "BUSCAR" : locale === "es" ? "BUSCAR" : "SEARCH"}</span>
+      <span id={`search-hint-${locale}`} className="sr-only">{m.searchLabel}</span>
+      {normalizedQuery && <div className="search-results" aria-live="polite">
+        {results.length === 0 ? <p className="search-empty">{m.searchEmpty} “{query}”.</p> : results.map((item) => {
+          const translated = translatedCatalog[locale][item.slug as keyof (typeof translatedCatalog)[typeof locale]];
+          const category = item.category === "complexity" ? m.categoryComplexity : item.category === "data-structures" ? m.categoryData : m.categoryAlgorithms;
+          return <div className="search-result" key={item.slug}>
+            <div><span>{category}</span><strong>{translated?.[0] ?? item.title}</strong><p>{translated?.[1] ?? item.summary}</p></div>
+            {item.status === "available" ? <Link href={locale === "pt-br" ? "/laboratorio" : `/${locale}/laboratorio`} aria-label={`${m.searchOpen} ${translated?.[0] ?? item.title}`}>{m.searchOpen} ↗</Link> : <span className="search-planned">{m.planned}</span>}
+          </div>;
+        })}
+      </div>}
     </div>
   );
 }
