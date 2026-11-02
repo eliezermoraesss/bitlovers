@@ -7,6 +7,8 @@ BitLovers é uma plataforma educacional aberta para explorar algoritmos, complex
 ## O que existe nesta fundação
 
 - Página inicial responsiva com identidade visual própria.
+- Preferência de tema claro, escuro ou sistema, preservada no navegador.
+- Busca de conteúdos por título, resumo, categoria e palavras-chave, distinguindo conteúdos disponíveis dos planejados.
 - Catálogo tipado de conteúdos e indicação explícita do que está disponível ou planejado.
 - Primeira rota de laboratório interativo para comparar oito funções clássicas de crescimento.
 - Controle de tamanho da entrada, seleção individual de curvas e alternância entre escala linear e logarítmica.
@@ -71,7 +73,7 @@ O conteúdo e os cálculos ficam separados da camada de apresentação para faci
 2. **Complexidade:** ampliar explicações, testes e exemplos instrumentados.
 3. **Estruturas de dados:** visualizações operacionais de arrays, pilhas, filas, mapas hash e árvores.
 4. **Algoritmos:** busca, ordenação, recursividade e código copiável.
-5. **Aprendizagem:** trilhas, exercícios, favoritos, progresso local e glossário.
+5. **Aprendizagem:** internacionalização completa (pt-BR, en e es), trilhas, exercícios, favoritos, progresso local e glossário.
 6. **Expansão:** novos temas conforme a demanda.
 
 ## Deploy
